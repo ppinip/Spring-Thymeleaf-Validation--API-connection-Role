@@ -24,6 +24,11 @@
         <li class="nav-item">
           <a class="nav-link" th:href="@{/menu}">Menu</a>
         </li>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/menu/add}">Add Menu</a>
+          </li>
+        </div>
       </ul>
     </div>
     <div sec:authorize="isAuthenticated()">
